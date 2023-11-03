@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_11_03_175046) do
+ActiveRecord::Schema.define(version: 2023_11_03_180438) do
 
   create_table "games", force: :cascade do |t|
     t.string "title"
@@ -19,6 +19,17 @@ ActiveRecord::Schema.define(version: 2023_11_03_175046) do
     t.integer "release_year"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "content"
+    t.integer "rating"
+    t.integer "game_id"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["game_id"], name: "index_reviews_on_game_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
 end
