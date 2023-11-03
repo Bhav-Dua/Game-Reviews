@@ -5,7 +5,8 @@ class UsersController < ApplicationController
             user = User.find(session[:user_id])
             render json: user, staus: :ok
         else
-            render json: render json: { error: "Not Authorized" }, status: :unauthorized
+            render json: { errors: ["Not Authorized"] }, status: :unauthorized
+        end
     end
 
     def create
