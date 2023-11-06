@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.Nav-logo {
+  font-family: "Permanent Marker", cursive;
+  font-size: 4rem;
+  margin: 0;
+  line-height: 1;
+}
+
+.Nav-logo a {
+  color: rgb(255, 0, 0);
+}
