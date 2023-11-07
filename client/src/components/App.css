@@ -54,3 +54,16 @@
   right: 0;
   padding: 1rem;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-top: -10rem;
+}
+
+.Submit-button {
+  margin-top: 10px;
+}

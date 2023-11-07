@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
-function LoginForm({ onLogin }) {
+function LoginForm({ setUser }) {
 
     const [formData, setFormData] = useState({username: "", password: ""});
     const [errors, setErrors] = useState([]);
+    const history = useHistory();
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -16,12 +18,15 @@ function LoginForm({ onLogin }) {
         })
             .then(r => {
                 if (r.ok) {
-                    r.json().then(onLogin)
+                    r.json().then(r => setUser(r))
+                    history.push("/")
                 }
                 else {
-                    r.json(e).then(setErrors(e.errors))
+                    r.json().then(r => setErrors(r.errors))
+                    setFormData({username: "", password: ""})
                 }
             })
+
     }
 
     function handleFormData(e) {
@@ -44,7 +49,9 @@ function LoginForm({ onLogin }) {
             {errors.map(error => (
                 <p>{error}</p>
             ))}
-            <button className="ui button" type="submit">Submit</button>
+            <button className="Submit-button" type="submit">Submit</button>
         </form>
     )
 }
+
+export default LoginForm;
