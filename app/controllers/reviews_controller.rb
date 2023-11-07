@@ -28,4 +28,8 @@ class ReviewsController < ApplicationController
         @current_user = User.find(session[:user_id])
         render json: { errors: ["Not authorized"] }, status: :unauthorized unless @current_user
     end
+
+    def review_params
+        params.permit([:content, :rating, :game_id])
+    end
 end
