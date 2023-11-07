@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
-function LoginForm({ setUser }) {
+function SignUpForm({ setUser }) {
 
-    const [formData, setFormData] = useState({username: "", password: ""});
+    const [formData, setFormData] = useState({username: "", password: "", password_confirmation: ""});
     const [errors, setErrors] = useState([]);
     const history = useHistory();
 
     function handleSubmit(e) {
         e.preventDefault();
-        fetch("/login", {
+        fetch("/signup", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -18,12 +18,12 @@ function LoginForm({ setUser }) {
         })
             .then(r => {
                 if (r.ok) {
-                    r.json().then(r => setUser(r))
-                    history.push("/")
+                    r.json().then(r => setUser(r));
+                    history.push("/");
                 }
                 else {
                     r.json().then(r => setErrors(r.errors))
-                    setFormData({username: "", password: ""})
+                    setFormData({username: "", password: "", password_confirmation: ""})
                 }
             })
 
@@ -46,6 +46,10 @@ function LoginForm({ setUser }) {
             <label htmlFor="password">Password </label>
             <input type="password" id="password" name="password" value={formData.password} onChange={handleFormData} />
             </div>
+            <div className="field">
+            <label htmlFor="password-confirmation">Password confirmation </label>
+            <input type="password" id="password-confirmation" name="password_confirmation" value={formData.password_confirmation} onChange={handleFormData} />
+            </div>
             {errors.map(error => (
                 <p>{error}</p>
             ))}
@@ -54,4 +58,4 @@ function LoginForm({ setUser }) {
     )
 }
 
-export default LoginForm;
+export default SignUpForm;

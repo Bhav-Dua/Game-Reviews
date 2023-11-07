@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import NavBar from './NavBar';
 import LoginForm from './LoginForm'
+import SignUpForm from './SignUpForm';
 
 export const UserContext = createContext();
 
@@ -27,6 +28,9 @@ function App() {
         <Switch>
           <Route path="/login">
             <LoginForm setUser={setUser} />
+          </Route>
+          <Route path="/signup">
+            <SignUpForm setUser={setUser} />
           </Route>
         </Switch>
       </UserContext.Provider>
