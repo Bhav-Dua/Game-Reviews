@@ -7,7 +7,7 @@ function GameList({ games }) {
 
 
   function handleAddGame() {
-    history.push("/addGame")
+    history.push("/addgame")
   }
 
   return (
@@ -23,7 +23,11 @@ function GameList({ games }) {
             </div>
             <div className="content">
               <a className="header">{game.title}</a>
-              <div className="description">Released in {game.release_year}</div>
+              {game.release_year ? (
+                <div className="description">Released in {game.release_year}</div>
+              ) : (
+                 <></>
+              )}
             </div>
           </div>
         ))}
