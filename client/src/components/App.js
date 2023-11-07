@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, createContext } from 'react';
 import './App.css';
 import NavBar from './NavBar';
 
-const UserContext = React.createContext();
+export const UserContext = createContext();
 
 function App() {
 
@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="App">
       <UserContext.Provider value={user}>
-        <NavBar />
+        <NavBar setUser={setUser}/>
       </UserContext.Provider>
     </div>
   );
