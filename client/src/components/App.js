@@ -1,3 +1,4 @@
+import 'semantic-ui-css/semantic.min.css';
 import React, { useEffect, useState, createContext } from "react";
 import { Route, Switch } from "react-router-dom";
 import "./App.css";

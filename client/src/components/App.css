@@ -37,6 +37,10 @@
   }
 }
 
+.NavBar{
+  padding-bottom: 4rem;
+}
+
 .Nav-logo {
   font-family: "Permanent Marker", cursive;
   font-size: 4rem;
