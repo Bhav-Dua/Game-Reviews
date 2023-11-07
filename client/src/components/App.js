@@ -6,6 +6,7 @@ import NavBar from "./NavBar";
 import LoginForm from "./LoginForm";
 import SignUpForm from "./SignUpForm";
 import GameList from "./GameList";
+import CreateGameForm from './CreateGameForm';
 
 export const UserContext = createContext();
 
@@ -26,6 +27,13 @@ function App() {
       .then((r) => r.json())
       .then(setGames);
   }, []);
+  
+  function addGame(newGame) {
+    setGames([
+      ...games,
+      newGame
+    ])
+  }
 
   return (
     <div className="App">
@@ -37,6 +45,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignUpForm setUser={setUser} />
+          </Route>
+          <Route path="/addgame">
+            <CreateGameForm onCreateGame={addGame} />
           </Route>
           <Route exact path="/">
             <GameList games={games} />
