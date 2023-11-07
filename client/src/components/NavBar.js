@@ -21,7 +21,7 @@ function NavBar({ setUser }) {
     }
 
     function handleSignup() {
-
+        history.push("/signup");
     }
 
     return (
