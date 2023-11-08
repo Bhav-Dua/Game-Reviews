@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    skip_before_action :authorize, only: [:create]
 
     def show
         if session.include? :user_id
