@@ -22,6 +22,7 @@ function Review({
       if (r.ok) {
         onDeleteReview(reviewId, gameId);
       } else {
+        r.json().then(r => setErrors(r.errors))
       }
     });
   }
