@@ -14,8 +14,8 @@ function GameList({ games }) {
         Add Game
       </button>
       <div className="ui cards">
-        {games.map((game, index) => (
-          <div key={index} className="ui card">
+        {games.map((game) => (
+          <div key={game.id} className="ui card">
             <div className="image">
               <img src={game.game_img} alt={game.title} />
             </div>
