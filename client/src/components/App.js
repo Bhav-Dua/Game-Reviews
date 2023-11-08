@@ -43,6 +43,21 @@ function App() {
     setGames(updatedGames);
   }
 
+  function updateReview(updatedReview, gameId) {
+    const updatedGames = games.map((game) => {
+      if (game.id === gameId) {
+        game.reviews = game.reviews.map((review) => {
+          if (review.id === updatedReview.id) {
+            return updatedReview
+          }
+          else return review
+        })
+      }
+      return game;
+    })
+    setGames(updatedGames)
+  }
+
   return (
     <div className="App">
       <UserContext.Provider value={user}>
@@ -58,7 +73,7 @@ function App() {
             <CreateGameForm onCreateGame={addGame} />
           </Route>
           <Route path="/games/:id">
-            <GamePage games={games} onDeleteReview={deleteReview}/>
+            <GamePage games={games} onDeleteReview={deleteReview} onUpdateReview={updateReview} />
           </Route>
           <Route exact path="/">
             <GameList games={games} />

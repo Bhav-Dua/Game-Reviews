@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import Review from "./Review";
 
-function GamePage({ games, onDeleteReview }) {
+function GamePage({ games, onDeleteReview, onUpdateReview }) {
   const { id } = useParams();
   const gameToDisplay = games.find((game) => game.id == id);
 
@@ -18,6 +18,7 @@ function GamePage({ games, onDeleteReview }) {
       userId={review.user.id}
       gameId={gameToDisplay.id}
       onDeleteReview={onDeleteReview}
+      onUpdateReview={onUpdateReview}
     />
   ));
 
