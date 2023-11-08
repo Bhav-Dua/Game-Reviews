@@ -94,7 +94,7 @@ input {
 .ui.vertical.menu {
   display: flex;
   flex-wrap: wrap;
-  width: 30%;
+  width: 100%;
 }
 
 .ui.vertical.menu .item {
@@ -104,6 +104,6 @@ input {
   padding-left: 3rem;
 }
 
-.buttons {
+.ui.buttons {
   margin-left: auto;
 }

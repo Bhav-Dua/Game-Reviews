@@ -89,7 +89,7 @@ function Review({
         )}
       </div>
       {user && user.id == userId ? (
-        <div className="buttons">
+        <div className="ui buttons">
           {isEditing ? (
             <>
               <div className="ui button" onClick={handleCancelEdit}>
