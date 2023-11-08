@@ -1,5 +1,5 @@
 class ReviewWithUserSerializer < ActiveModel::Serializer
-  attributes :content, :rating
+  attributes :id, :content, :rating
 
   belongs_to :user
 end
