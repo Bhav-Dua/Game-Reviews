@@ -10,7 +10,11 @@ function GameList({ games }) {
 
   return (
     <div className="GameList">
-      <button className="AddGame" onClick={handleAddGame}>
+      <button
+        className="AddGame"
+        onClick={handleAddGame}
+        style={{ marginBottom: "3rem" }}
+      >
         Add Game
       </button>
       <div className="ui cards">
