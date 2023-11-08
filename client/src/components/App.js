@@ -7,6 +7,7 @@ import LoginForm from "./LoginForm";
 import SignUpForm from "./SignUpForm";
 import GameList from "./GameList";
 import CreateGameForm from "./CreateGameForm";
+import GamePage from "./GamePage";
 
 export const UserContext = createContext();
 
@@ -45,6 +46,9 @@ function App() {
           </Route>
           <Route path="/addgame">
             <CreateGameForm onCreateGame={addGame} />
+          </Route>
+          <Route path="/game/:id">
+            <GamePage games={games} />
           </Route>
           <Route exact path="/">
             <GameList games={games} />
