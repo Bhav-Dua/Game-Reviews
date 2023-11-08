@@ -20,7 +20,9 @@ function GameList({ games }) {
               <img src={game.game_img} alt={game.title} />
             </div>
             <div className="content">
-              <a className="header">{game.title}</a>
+              <a className="header" href={`/games/${game.id}`}>
+                {game.title}
+              </a>
               {game.release_year ? (
                 <div className="description">
                   Released in {game.release_year}

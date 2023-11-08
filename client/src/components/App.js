@@ -57,7 +57,7 @@ function App() {
           <Route path="/addgame">
             <CreateGameForm onCreateGame={addGame} />
           </Route>
-          <Route path="/game/:id">
+          <Route path="/games/:id">
             <GamePage games={games} onDeleteReview={deleteReview}/>
           </Route>
           <Route exact path="/">
