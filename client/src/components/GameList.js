@@ -2,12 +2,10 @@ import React from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function GameList({ games }) {
-
-    const history = useHistory();
-
+  const history = useHistory();
 
   function handleAddGame() {
-    history.push("/addgame")
+    history.push("/addgame");
   }
 
   return (
@@ -24,9 +22,11 @@ function GameList({ games }) {
             <div className="content">
               <a className="header">{game.title}</a>
               {game.release_year ? (
-                <div className="description">Released in {game.release_year}</div>
+                <div className="description">
+                  Released in {game.release_year}
+                </div>
               ) : (
-                 <></>
+                <></>
               )}
             </div>
           </div>

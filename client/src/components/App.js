@@ -1,4 +1,4 @@
-import 'semantic-ui-css/semantic.min.css';
+import "semantic-ui-css/semantic.min.css";
 import React, { useEffect, useState, createContext } from "react";
 import { Route, Switch } from "react-router-dom";
 import "./App.css";
@@ -6,13 +6,13 @@ import NavBar from "./NavBar";
 import LoginForm from "./LoginForm";
 import SignUpForm from "./SignUpForm";
 import GameList from "./GameList";
-import CreateGameForm from './CreateGameForm';
+import CreateGameForm from "./CreateGameForm";
 
 export const UserContext = createContext();
 
 function App() {
   const [user, setUser] = useState(null);
-  const [games, setGames] = useState([])
+  const [games, setGames] = useState([]);
 
   useEffect(() => {
     fetch("/me").then((r) => {
@@ -27,12 +27,9 @@ function App() {
       .then((r) => r.json())
       .then(setGames);
   }, []);
-  
+
   function addGame(newGame) {
-    setGames([
-      ...games,
-      newGame
-    ])
+    setGames([...games, newGame]);
   }
 
   return (
