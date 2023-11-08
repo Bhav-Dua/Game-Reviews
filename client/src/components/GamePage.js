@@ -13,9 +13,9 @@ function GamePage({ games, onDeleteReview, onUpdateReview }) {
       key={review.id}
       content={review.content}
       rating={review.rating}
-      username={review.user.username}
+      username={review.username}
       reviewId={review.id}
-      userId={review.user.id}
+      userId={review.user_id}
       gameId={gameToDisplay.id}
       onDeleteReview={onDeleteReview}
       onUpdateReview={onUpdateReview}
