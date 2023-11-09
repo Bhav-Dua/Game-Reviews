@@ -95,6 +95,7 @@ input {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  height: 90vh;
 }
 
 .ui.vertical.menu .item {
@@ -106,4 +107,10 @@ input {
 
 .ui.buttons {
   margin-left: auto;
+}
+
+.middle.aligned.column img {
+  margin-bottom: 10rem;
+  width: 50%;
+  height: 50%;
 }

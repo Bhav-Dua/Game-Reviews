@@ -119,7 +119,8 @@ function GamePage({ games, onDeleteReview, onUpdateReview, onAddReview }) {
 
         </div>
         <div className="middle aligned column">
-          hi
+            <img src={gameToDisplay.game_img} alt={gameToDisplay.title} />
+            <h1>{gameToDisplay.title}</h1>
         </div>
         </div>
         <div className="ui vertical divider"></div>
