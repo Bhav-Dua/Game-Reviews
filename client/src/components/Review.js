@@ -11,7 +11,7 @@ function Review({
   onDeleteReview,
   onUpdateReview,
 }) {
-  const user = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const [isEditing, setIsEditing] = useState(false);
   const [editedContent, setEditedContent] = useState(content);
   const [editedRating, setEditedRating] = useState(rating);

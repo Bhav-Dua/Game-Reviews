@@ -4,7 +4,7 @@ import { UserContext } from "./App";
 
 function GameList({ games }) {
   const history = useHistory();
-  const user = useContext(UserContext);
+  const { user } = useContext(UserContext);
 
   function handleAddGame() {
     history.push("/addgame");

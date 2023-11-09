@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { UserContext } from "./App";
 
-function SignUpForm({ setUser }) {
+function SignUpForm() {
+  const { setUser } = useContext(UserContext);
   const [formData, setFormData] = useState({
     username: "",
     password: "",

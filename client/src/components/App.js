@@ -8,6 +8,7 @@ import SignUpForm from "./SignUpForm";
 import GameList from "./GameList";
 import CreateGameForm from "./CreateGameForm";
 import GamePage from "./GamePage";
+import MyGames from "./MyGames";
 
 export const UserContext = createContext();
 
@@ -70,20 +71,23 @@ function App() {
 
   return (
     <div className="App">
-      <UserContext.Provider value={user}>
-        <NavBar setUser={setUser} />
+      <UserContext.Provider value={{user, setUser}}>
+        <NavBar />
         <Switch>
           <Route path="/login">
-            <LoginForm setUser={setUser} />
+            <LoginForm />
           </Route>
           <Route path="/signup">
-            <SignUpForm setUser={setUser} />
+            <SignUpForm />
           </Route>
           <Route path="/addgame">
             <CreateGameForm onCreateGame={addGame} />
           </Route>
           <Route path="/games/:id">
             <GamePage games={games} onDeleteReview={deleteReview} onUpdateReview={updateReview} onAddReview={addReview} />
+          </Route>
+          <Route path="/mygames">
+            <MyGames />
           </Route>
           <Route exact path="/">
             <GameList games={games} />

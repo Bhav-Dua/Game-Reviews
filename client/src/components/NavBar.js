@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { UserContext } from "./App";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
-function NavBar({ setUser }) {
-  const user = useContext(UserContext);
+function NavBar() {
+  const { user, setUser } = useContext(UserContext);
   const history = useHistory();
 
   function handleLogout() {

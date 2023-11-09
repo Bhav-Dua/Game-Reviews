@@ -4,7 +4,7 @@ import Review from "./Review";
 import { UserContext } from "./App";
 
 function GamePage({ games, onDeleteReview, onUpdateReview, onAddReview }) {
-  const user = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const history = useHistory();
   const { id } = useParams();
   const gameToDisplay = games.find((game) => game.id == id);
