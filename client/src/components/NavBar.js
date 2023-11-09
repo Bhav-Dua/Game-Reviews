@@ -29,12 +29,12 @@ function NavBar() {
       {user ? (
         <div className="User-action">
           <p>Hello {user.username}</p>
-          <button onClick={handleLogout}>Logout</button>
+          <button className="ui button" onClick={handleLogout}>Logout</button>
         </div>
       ) : (
         <div className="User-action">
-          <button onClick={handleLogin}>Login</button>
-          <button onClick={handleSignup} style={{ marginLeft: "10px" }}>
+          <button className="ui button" onClick={handleLogin}>Login</button>
+          <button className="ui button" onClick={handleSignup} style={{ marginLeft: "10px" }}>
             Create Account
           </button>
         </div>
